@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Iliass Elhaski — Web Developer</title>
+  <style>
+   
+    *{ margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0d1117; color: #e6edf3; line-height: 1.6; }
+    nav { background: #161b22; border-bottom: 2px solid #2563eb; padding: 16px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+    .nav-logo { font-size: 20px; font-weight: 700; color: #4f8ef7; text-decoration: none; }
+    .nav-links { display: flex; gap: 24px; list-style: none; }
+    .nav-links a { text-decoration: none; color: #8b949e; font-size: 15px; transition: color 0.2s; }
+    .nav-links a:hover { color: #4f8ef7; }
+    .hero { background: #161b22; padding: 80px 40px; text-align: center; border-bottom: 1px solid #21262d; }
+    .hero h1 { font-size: 42px; font-weight: 700; color: #e6edf3; margin-bottom: 12px; }
+    .hero h1 span { color: #4f8ef7; }
+    .hero p { font-size: 16px; color: #8b949e; max-width: 500px; margin: 0 auto 32px; }
+    .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn { padding: 12px 24px; border-radius: 6px; font-size: 15px; text-decoration: none; transition: all 0.2s; }
+    .btn-blue { background: #2563eb; color: #fff; border: 2px solid #2563eb; }
+    .btn-blue:hover { background: #1d4ed8; }
+    .btn-outline { background: transparent; color: #4f8ef7; border: 2px solid #2563eb; }
+    .btn-outline:hover { background: #1a2332; }
+    section { max-width: 900px; margin: 0 auto; padding: 60px 24px; }
+    h2 { font-size: 28px; font-weight: 700; color: #e6edf3; margin-bottom: 8px; border-left: 4px solid #2563eb; padding-left: 12px; }
+    .section-sub { color: #8b949e; font-size: 14px; margin-bottom: 32px; padding-left: 16px; }
+    hr { border: none; border-top: 1px solid #21262d; margin: 0; }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+    .skill-box { background: #161b22; border: 1px solid #21262d; border-radius: 8px; padding: 20px; transition: border-color 0.2s; }
+    .skill-box:hover { border-color: #2563eb; }
+    .skill-box h3 { font-size: 15px; font-weight: 600; margin-bottom: 12px; color: #4f8ef7; }
+    .skill-box ul { list-style: none; }
+    .skill-box ul li { font-size: 14px; color: #8b949e; padding: 3px 0; }
+    .skill-box ul li::before { content: "→ "; color: #4f8ef7; }
+    .project-card { background: #161b22; border: 1px solid #21262d; border-radius: 8px; padding: 24px; margin-bottom: 16px; transition: border-color 0.2s; }
+    .project-card:hover { border-color: #2563eb; }
+    .project-card h3 { font-size: 18px; font-weight: 600; color: #e6edf3; margin-bottom: 8px; }
+    .project-card p { font-size: 14px; color: #8b949e; margin-bottom: 16px; }
+    .tags { display: flex; gap: 8px; flex-wrap: wrap; }
+    .tag { background: #1a2332; color: #4f8ef7; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500; }
+    .project-link { display: inline-block; margin-top: 12px; font-size: 13px; color: #4f8ef7; text-decoration: none; }
+    .project-link:hover { text-decoration: underline; }
+    .edu-item { background: #161b22; border: 1px solid #21262d; border-radius: 8px; padding: 20px 24px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    .edu-item h3 { font-size: 16px; font-weight: 600; color: #e6edf3; }
+    .edu-item p { font-size: 13px; color: #8b949e; margin-top: 2px; }
+    .edu-date { font-size: 13px; color: #4f8ef7; font-weight: 500; white-space: nowrap; }
+    .cert-item { background: #161b22; border: 1px solid #21262d; border-radius: 8px; padding: 16px 24px; margin-bottom: 12px; display: flex; align-items: center; gap: 16px; }
+    .cert-icon { font-size: 28px; }
+    .cert-item h3 { font-size: 15px; font-weight: 600; color: #e6edf3; }
+    .cert-item p { font-size: 13px; color: #8b949e; }
+    .cert-date { margin-left: auto; font-size: 12px; color: #22c55e; font-weight: 500; }
+    .lang-grid { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+    .lang-item { background: #161b22; border: 1px solid #21262d; border-radius: 6px; padding: 12px 20px; font-size: 14px; color: #e6edf3; }
+    .lang-item span { color: #4f8ef7; font-size: 12px; margin-left: 6px; }
+    .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+    .contact-item { background: #161b22; border: 1px solid #21262d; border-radius: 8px; padding: 20px; }
+    .contact-item p:first-child { font-size: 12px; color: #8b949e; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+    .contact-item p:last-child { font-size: 15px; color: #e6edf3; font-weight: 500; }
+
+
+ body { cursor: none; }
+   .cursor { width: 10px; height: 10px; background: #4f8ef7; border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; }
+ .cursor-ring { width: 32px; height: 32px; border: 1px solid #4f8ef7;
+   border-radius: 50%; position: fixed; pointer-events: none; z-index: 9998;
+    opacity: 0.5; transition: all 0.15s ease; }
+    footer { text-align: center; padding: 24px; background: #161b22; border-top: 1px solid #21262d; font-size: 13px; color: #8b949e; }
+    @media (max-width: 600px) {
+      nav { padding: 14px 20px; }
+      .nav-links { gap: 12px; }
+      .hero { padding: 60px 20px; }
+      .hero h1 { font-size: 28px; }
+    }
+  </style>
+</head>
+
+
+
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<nav>
+  <a href="#" class="nav-logo">Iliass Elhaski</a>
+  <ul class="nav-links">
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <h1>Hi, I'm <span>Iliass Elhaski</span> 👋</h1>
+  <p>Full Stack Web Developer student based in Marrakech, Morocco. Passionate about building clean and useful web applications.</p>
+  <div class="hero-btns">
+    <a href="#projects" class="btn btn-blue">View My Projects</a>
+    <a href="/cdn-cgi/l/email-protection#d2b7bebab3a1b9bbfcbbbebbb3a1a192b5bfb3bbbefcb1bdbf" class="btn btn-outline">Contact Me</a>
+  </div>
+</div>
+
+  <hr/>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <p class="section-sub">Technologies I work with</p>
+  <div class="skills-grid">
+    <div class="skill-box">
+      <h3>Front-End</h3>
+      <ul><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>React</li></ul>
+</div>
+    <div class="skill-box">
+      <h3>Back-End</h3>
+      <ul><li>PHP</li><li>Laravel</li><li>Python</li></ul>
+    </div>
+    <div class="skill-box">
+      <h3>Databases</h3>
+      <ul><li>MySQL</li><li>MongoDB</li></ul>
+    </div>
+    <div class="skill-box">
+      <h3>Soft Skills</h3>
+      <ul><li>Teamwork</li><li>Problem solving</li><li>Project management</li></ul>
+    </div>
+  </div>
+</section>
+
+<hr/>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <p class="section-sub">My academic work</p>
+
+  <div class="project-card">
+    <h3>Dynamic Website</h3>
+    <p>A fully dynamic website built as a school project. Includes interactive features, form handling, and database connection.</p>
+    <div class="tags">
+      <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">PHP</span><span class="tag">MySQL</span>
+    </div>
+    <a href="https://github.com/iliass-elhaski" class="project-link">→ View on GitHub</a>
+  </div>
+
+  <div class="project-card">
+    <h3>MySQL Database System</h3>
+    <p>Designed and managed a complete relational database with optimized queries, tables and relationships between entities.</p>
+    <div class="tags">
+      <span class="tag">MySQL</span><span class="tag">PHP</span><span class="tag">SQL</span>
+    </div>
+    <a href="https://github.com/iliass-elhaski" class="project-link">→ View on GitHub</a>
+  </div>
+
+  <div class="project-card">
+    <h3>React Applications</h3>
+    <p>Built simple React applications to practice component-based development, props, state management and hooks.</p>
+    <div class="tags">
+      <span class="tag">React</span><span class="tag">JavaScript</span><span class="tag">CSS</span>
+    </div>
+    <a href="https://github.com/iliass-elhaski" class="project-link">→ View on GitHub</a>
+  </div>
+</section>
+
+<hr/>
+
+<section id="education">
+  <h2>Education</h2>
+  <p class="section-sub">My academic background</p>
+
+  <div class="edu-item">
+    <div>
+      <h3>Full Stack Digital Development</h3>
+      <p>OFPPT — Institut de Technologie Appliquée, Marrakech</p>
+    </div>
+    <div class="edu-date">2025 — 2026 (In progress)</div>
+  </div>
+
+  <div class="edu-item">
+    <div>
+      <h3>Baccalaureate — Physical Sciences</h3>
+      <p>Marrakech, Morocco</p>
+    </div>
+    <div class="edu-date">2023 — 2024</div>
+  </div>
+
+  <br/>
+  <h2>Certifications</h2>
+  <p class="section-sub">Official certificates</p>
+
+  <div class="cert-item">
+    <div class="cert-icon">🔵</div>
+    <div>
+      <h3>Python Essentials 2</h3>
+      <p>Cisco Networking Academy</p>
+    </div>
+    <div class="cert-date">April 2025 ✓</div>
+  </div>
+
+  <br/>
+  <h2>Languages</h2>
+  <p class="section-sub">Languages I speak</p>
+  <div class="lang-grid">
+    <div class="lang-item">Arabic <span>Native</span></div>
+    <div class="lang-item">French <span>Good level</span></div>
+    <div class="lang-item">English <span>Good level</span></div>
+  </div>
+</section>
+
+<hr/>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p class="section-sub">Feel free to reach out</p>
+  <div class="contact-grid">
+    <div class="contact-item">
+      <p>Email</p>
+      <p>elhaski.iliass@gmail.com</p>
+    </div>
+    <div class="contact-item">
+      <p>Phone</p>
+      <p>+212 715 150 533</p>
+    </div>
+    <div class="contact-item">
+      <p>Location</p>
+      <p>Marrakech, Morocco</p>
+    </div>
+    <div class="contact-item">
+      <p>Status</p>
+      <p style="color:#22c55e">Open to opportunities </p>
+      </div>
+      </div>
+      </section>
+
+
+      <script>
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+  document.addEventListener('mousemove', e => {
+    mouseX = e.clientX; mouseY = e.clientY;
+    cursor.style.left = mouseX - 5 + 'px';
+    cursor.style.top = mouseY - 5 + 'px';
+  });
+  function animateRing() {
+    ringX += (mouseX - ringX - 16) * 0.12;
+    ringY += (mouseY - ringY - 16) * 0.12;
+    ring.style.left = ringX + 'px';
+    ring.style.top = ringY + 'px';
+    requestAnimationFrame(animateRing);
+  }
+  animateRing();
+    </script>
+      </body>
+      </html>
